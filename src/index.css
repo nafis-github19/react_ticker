@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.full-body{
+  width: 600px;
+  margin: auto;
+  margin-top: 20%;
+  border: 2px solid red;
+  padding: 20px;
+  background-color: skyblue;
+  color: yellow;
+  font-weight: bolder;
+  text-align: center;
+}
+
+button{
+  margin-top: 20px;
+}
+
+button:hover{
+  color: red;
+}
