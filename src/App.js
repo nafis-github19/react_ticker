@@ -5,7 +5,7 @@ class Ticker extends Component{
     super();
 
       this.state ={
-        count: 100,
+        count: 0,
       }
 
   }
@@ -14,11 +14,20 @@ class Ticker extends Component{
   componentDidMount(){
     setInterval(() =>{
       this.setState({
-        count: this.state.count -1,
+        count: this.state.count + 1,
       })
     },1000)
   }
 
+
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextState.count % 3 === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
 
   render(){
@@ -27,7 +36,7 @@ class Ticker extends Component{
       <div className="full-body">
         <div className="ticker-count"> The ticker is: <span id="count">{this.state.count}</span></div>
 
-        <button onClick={() => this.setState({count: 100})} type="button">Clear Count</button>
+        <button onClick={() => this.setState({count: 0})} type="button">Clear Count</button>
 
       </div>
     );
